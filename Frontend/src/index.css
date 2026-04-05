@@ -1,0 +1,212 @@
+/* ── Global reset & base ─────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f0f2f5;
+  color: #1a1a2e;
+  min-height: 100vh;
+}
+
+/* ── Navbar ──────────────────────────────────────────────────── */
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: -0.5px;
+}
+
+.navbar-brand .brand-dot {
+  color: #4f46e5;
+}
+
+/* ── Cards ───────────────────────────────────────────────────── */
+.card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.04);
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12), 0 8px 24px rgba(0,0,0,0.06);
+}
+
+/* ── Stat cards on dashboard ─────────────────────────────────── */
+.stat-card {
+  border-radius: 16px;
+  padding: 1.5rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+}
+
+.stat-card .stat-icon {
+  font-size: 2rem;
+  opacity: 0.9;
+}
+
+.stat-card .stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stat-card .stat-label {
+  font-size: 0.85rem;
+  opacity: 0.85;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── Status badges ───────────────────────────────────────────── */
+.badge-todo {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+.badge-inprogress {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+.badge-done {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+/* ── Task card ───────────────────────────────────────────────── */
+.task-card {
+  border-left: 4px solid transparent;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+}
+
+.task-card.todo { border-left-color: #9ca3af; }
+.task-card.inprogress { border-left-color: #3b82f6; }
+.task-card.done { border-left-color: #10b981; }
+
+/* ── Auth pages ──────────────────────────────────────────────── */
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  border-radius: 20px !important;
+  padding: 2rem;
+}
+
+.auth-logo {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #4f46e5;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────── */
+.btn {
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.btn-primary {
+  background-color: #4f46e5;
+  border-color: #4f46e5;
+}
+
+.btn-primary:hover {
+  background-color: #4338ca;
+  border-color: #4338ca;
+}
+
+/* ── Form controls ───────────────────────────────────────────── */
+.form-control:focus, .form-select:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.15);
+}
+
+/* ── Sidebar layout ──────────────────────────────────────────── */
+.sidebar {
+  width: 240px;
+  min-height: 100vh;
+  background: #1e1b4b;
+  padding: 1.5rem 1rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+}
+
+.sidebar .nav-link {
+  color: rgba(255,255,255,0.7);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.25rem;
+  transition: all 0.15s;
+  font-size: 0.9rem;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+.sidebar .nav-link i {
+  width: 20px;
+  margin-right: 8px;
+}
+
+.main-content {
+  margin-left: 240px;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+/* ── Loading spinner ─────────────────────────────────────────── */
+.spinner-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+}
+
+/* ── Table ───────────────────────────────────────────────────── */
+.table th {
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #6b7280;
+  border-top: none;
+}
+
+/* ── Mobile: collapse sidebar ────────────────────────────────── */
+@media (max-width: 768px) {
+  .sidebar { display: none; }
+  .main-content { margin-left: 0; padding: 1rem; }
+}
